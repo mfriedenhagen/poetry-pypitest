@@ -1,6 +1,6 @@
 before_script:
   - sudo python3 -mvenv /usr/local/libexec/poetry
-  - sudo /usr/local/libexec/poetry/bin/python -mpip install poetry
+  - sudo /usr/local/libexec/poetry/bin/python -mpip install -q poetry
   - sudo ln -s /usr/local/libexec/poetry/bin/poetry /usr/local/bin
 
 test with pip.conf alone:
@@ -13,4 +13,4 @@ test with environment:
     PIP_REGISTRY_URL: "given_in_project_settings"
   script:
     - poetry install -vvv
-    - poetry run pytest
+    - poetry run pytest 
