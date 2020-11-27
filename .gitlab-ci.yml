@@ -10,7 +10,7 @@ test with pip.conf alone:
 
 test with environment:
   variables:
-    PIP_REGISTRY_URL: "given_in_project_settings"
+    PIP_REGISTRY_URL: $MY_PIP_REGISTRY_URL
   script:
     - poetry install -vvv
     - poetry run pytest 
