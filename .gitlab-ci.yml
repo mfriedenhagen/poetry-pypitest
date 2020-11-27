@@ -2,6 +2,7 @@ before_script:
   - sudo python3 -mvenv /usr/local/libexec/poetry
   - sudo /usr/local/libexec/poetry/bin/python -mpip install -q poetry
   - sudo ln -s /usr/local/libexec/poetry/bin/poetry /usr/local/bin
+  - poetry config experimental.new-installer false
 
 test with pip.conf alone:
   script:
