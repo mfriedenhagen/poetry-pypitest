@@ -5,6 +5,7 @@ before_script:
 
 test with pip.conf alone:
   script:
+    - grep index-url ~/.pip/pip.conf
     - poetry install -vvv
     - poetry run pytest
 
@@ -12,5 +13,6 @@ test with environment:
   variables:
     PIP_REGISTRY_URL: $MY_PIP_REGISTRY_URL
   script:
+    - echo $PIP_REGISTRY_URL
     - poetry install -vvv
     - poetry run pytest 
